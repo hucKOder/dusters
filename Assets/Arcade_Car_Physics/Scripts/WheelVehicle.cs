@@ -279,7 +279,7 @@ namespace VehicleBehaviour {
                 // Dirft
                 drift = GetInput(driftInput) > 0 && rb.velocity.sqrMagnitude > 100;
                 // Jump
-                jumping = GetInput(jumpInput) != 0;
+                //jumping = GetInput(jumpInput) != 0;
             }
 
             // Direction

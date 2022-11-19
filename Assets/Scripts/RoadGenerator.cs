@@ -30,7 +30,7 @@ public class RoadGenerator : MonoBehaviour
 
     private Dictionary<int, RoadPartController> ActiveRoadPrefabsById = new();
 
-    public int tilesWithNoObstaclesTmp;
+    public int TilesWithoutObstacles = 5;
 
     [HideInInspector]
     public bool GameRunning;
@@ -65,16 +65,15 @@ public class RoadGenerator : MonoBehaviour
             SpawnedRoadPrefabs.Add(spawnedRoad);
             ActiveRoadPrefabsById[part] = spawnedRoad;
 
-            // no obstacls first x tiles
-            //if (tilesWithNoObstaclesTmp > 0)
-            //{
-            //    spawnedTile.DeactivateAllObstacles();
-            //    tilesWithNoObstaclesTmp--;
-            //}
-            //else
-            //{
-            //    spawnedTile.ActivateRandomObstacle();
-            //}
+
+            if (TilesWithoutObstacles > 0)
+            {
+                TilesWithoutObstacles--;
+            }
+            else
+            {
+                spawnedRoad.AddRandomObstacle();
+            }
 
             // change tile, make sure to not generate outside of list index
             part++;
@@ -91,14 +90,15 @@ public class RoadGenerator : MonoBehaviour
         if (!GameRunning)
             return;
 
-
         if (MainCamera.WorldToViewportPoint(SpawnedRoadPrefabs[0].EndTransform.position).z < PartsDissapearAtZFromCamera)
         {
             //Move the tile to the front if it's behind the Camera
             var tileTmp = SpawnedRoadPrefabs[0];
+            tileTmp.CleanupObstacles();
             SpawnedRoadPrefabs.RemoveAt(0);
             tileTmp.transform.position = SpawnedRoadPrefabs[^1].EndTransform.position;
             tileTmp.transform.rotation = SpawnedRoadPrefabs[^1].EndTransform.rotation;
+            tileTmp.AddRandomObstacle();
 
             AddSlopeVariation(tileTmp);
             //tileTmp.ActivateRandomObstacle();
@@ -108,6 +108,10 @@ public class RoadGenerator : MonoBehaviour
 
     private void AddSlopeVariation(RoadPartController roadPart)
     {
+        // this stupid, dont do
+        return;
+        // #very efficient code
+
         var slopeDir = 1;
 
         if (roadPart.transform.rotation.x > MaxSlope)

@@ -15,7 +15,7 @@ MonoBehaviour:
   ThrottleInput: Vertical
   BrakeInput: Brake
   TurnInput: Steering
-  JumpInput: 
+  JumpInput: Jump
   DriftInput: Drift
   BoostInput: Boost
   WheelieInput: Boost

@@ -30,7 +30,6 @@ public class DrawOnTexture : MonoBehaviour {
     {
         Ray ray = _mainCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        Debug.DrawRay(_mainCam.transform.position, Input.mousePosition, Color.red);
         if(Physics.Raycast(ray, out hit, 100, 5))
         {
             // younger = redder (higher r)

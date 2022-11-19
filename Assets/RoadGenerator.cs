@@ -24,7 +24,7 @@ public class RoadGenerator : MonoBehaviour
     public float MaxSlope;
 
     [Range(-200, 0)]
-    private float PartsDissapearAtZFromCamera = -40;
+    public float PartsDissapearAtZFromCamera = -20;
 
     private List<RoadPartController> SpawnedRoadPrefabs = new();
 

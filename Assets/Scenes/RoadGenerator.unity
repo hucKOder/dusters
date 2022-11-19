@@ -255,6 +255,7 @@ MonoBehaviour:
   MainCamera: {fileID: 963194227}
   MaxSlopeChange: 5
   MaxSlope: 20
+  PartsDissapearAtZFromCamera: -20
   tilesWithNoObstaclesTmp: 0
   GameRunning: 0
 --- !u!4 &871945627

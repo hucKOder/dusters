@@ -86,11 +86,9 @@ public class CarController : MonoBehaviour
 
     private void Update()
     {
+        transform.position = rb.position;
         GetInput();
         Turn();
         TurnWheels();
-        transform.position = new Vector3(rb.position.x, transform.position.y, rb.position.z);
-
-        
     }
 }

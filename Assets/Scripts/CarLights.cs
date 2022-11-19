@@ -60,8 +60,6 @@ public class CarLights : MonoBehaviour
         if (CheckBattery())
         {
             battery.batteryCapacity -= USAGE;
-            Debug.Log("Draining battery with Fog lights!");
-            Debug.LogFormat("Batter capacity: {0}", battery.batteryCapacity);
         }
         else
         {

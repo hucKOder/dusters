@@ -248,13 +248,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GenerateParts: 10
   RoadPrefabs:
-  - {fileID: 3311365629177150439, guid: 7d4b992513dfcc24a92871bdb351739b, type: 3}
-  - {fileID: 6423108615367501601, guid: bc8417eb6d2f86a4ebb76102afbefdf1, type: 3}
-  - {fileID: 6423108615367501601, guid: 5625bcc51fd34ed4490517c6eb74e69a, type: 3}
+  - {fileID: 8999284662461883263, guid: 9d6ca87dc78c0d140aff71349e1c9d2b, type: 3}
+  - {fileID: 8999284662461883263, guid: 47b22d09c95a76e4b848be642973899d, type: 3}
+  - {fileID: 8999284662461883263, guid: e9ef258f8fd4f124f9c725d6e0d07481, type: 3}
   CarObject: {fileID: 998044937}
   MainCamera: {fileID: 963194227}
-  MaxSlopeChange: 5
-  MaxSlope: 20
+  MaxSlopeChange: 1
+  MaxSlope: 4
   PartsDissapearAtZFromCamera: -20
   tilesWithNoObstaclesTmp: 0
   GameRunning: 0

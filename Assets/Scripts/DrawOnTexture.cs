@@ -8,14 +8,12 @@ public class DrawOnTexture : MonoBehaviour {
     public int TextureSize;
     public int Radius;
     public Color BlurColor;
+    public Camera _mainCam;
 
     private Texture2D _texture;
-    private Camera _mainCam;
 
     void Start ()
     {
-        _mainCam = Camera.main;
-        
         _texture = new Texture2D(TextureSize, TextureSize, TextureFormat.RFloat, false, true); 
         for (int i = 0; i < _texture.height; i++)
         {
@@ -32,8 +30,8 @@ public class DrawOnTexture : MonoBehaviour {
     {
         Ray ray = _mainCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-
-        if(Physics.Raycast(ray, out hit, 100))
+        Debug.DrawRay(_mainCam.transform.position, Input.mousePosition, Color.red);
+        if(Physics.Raycast(ray, out hit, 100, 5))
         {
             // younger = redder (higher r)
             // older = blacker

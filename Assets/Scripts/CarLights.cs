@@ -18,23 +18,23 @@ public class CarLights : MonoBehaviour
 
     bool lightsOn = false;
 
-    public GameObject playerCursor;
-    BoxCollider2D cursorBoxCollider;
+    //public GameObject playerCursor;
+    //BoxCollider2D cursorBoxCollider;
     public Button thisButton;
     public Sprite fogLightSprite;
     public Sprite fogLightSprite_disabled;
 
     private void Start()
     {
-        cursorBoxCollider = playerCursor.GetComponent<BoxCollider2D>();
+        //cursorBoxCollider = playerCursor.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Collider2D[] overlap = Physics2D.OverlapAreaAll(cursorBoxCollider.bounds.min, cursorBoxCollider.bounds.max);
-        if (overlap.Length > 1)
-            SwapHandSprite(overlap[0].gameObject);
+        //Collider2D[] overlap = Physics2D.OverlapAreaAll(cursorBoxCollider.bounds.min, cursorBoxCollider.bounds.max);
+        //if (overlap.Length > 1)
+        //    SwapHandSprite(overlap[0].gameObject);
     }
 
     private void SwapHandSprite(GameObject button)

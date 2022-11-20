@@ -31,7 +31,9 @@ public class Hubka : MonoBehaviour
         }
         else
         {
-            Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+            CursorMode mode = CursorMode.ForceSoftware;
+            //Vector2 hotSpot = new Vector2(cursorTexture.width*0.5f, cursorTexture.height*0.5f);
+            Cursor.SetCursor(cursorTexture, Vector2.zero, mode);
             var tempColor = hubkaSelf.color;
             tempColor.a = 0f;
             hubkaSelf.color = tempColor;

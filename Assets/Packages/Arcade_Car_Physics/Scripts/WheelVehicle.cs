@@ -280,6 +280,11 @@ namespace VehicleBehaviour {
             // Mesure current speed
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f;
 
+            if (started && speed < 10)
+            {
+                dead = true;
+            } 
+
             // Get all the inputs!
             if (isPlayer && !dead) {
                 if (speed > 10)

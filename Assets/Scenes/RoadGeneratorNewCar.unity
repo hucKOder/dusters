@@ -598,11 +598,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5084219723797876012, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -3.3343994e-11
       objectReference: {fileID: 0}
     - target: {fileID: 5084219723797876012, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 2.6675995e-11
       objectReference: {fileID: 0}
     - target: {fileID: 5084219723797876013, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_Follow
@@ -650,11 +650,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5084219724413888253, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016236424
+      value: 0.000000016233855
       objectReference: {fileID: 0}
     - target: {fileID: 5084219724413888253, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000005695431
+      value: -0.0000000056945284
       objectReference: {fileID: 0}
     - target: {fileID: 5084219724413888253, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -679,52 +679,6 @@ WheelCollider:
   m_CorrespondingSourceObject: {fileID: 146504509095465980, guid: af384ca59b0f24483b0163f2ae19fe10, type: 3}
   m_PrefabInstance: {fileID: 442366074}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1298262781
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1298262783}
-  - component: {fileID: 1298262782}
-  m_Layer: 0
-  m_Name: SlowMotion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1298262782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298262781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13a2579b2e67efc41afc2a880421fea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SlowMotionFactor: 0.5
-  SlowMotionBlendTime: 5
---- !u!4 &1298262783
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298262781}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1497541591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5084219723051556358, guid: e97455b256c6c482c81a7b61b750010b, type: 3}

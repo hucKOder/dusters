@@ -50,6 +50,10 @@ MonoBehaviour:
   EndTransform: {fileID: 958811234598922375}
   Obstacles:
   - {fileID: 8540252248114740201, guid: 3f5a974a0ab917f46acf224f849bda8e, type: 3}
+  - {fileID: 4533052393390680958, guid: 4ef7b4219257dd143a32eded3da46a04, type: 3}
+  - {fileID: 8982903976347027296, guid: 02c922a781c963040930de7f0d9fb8ba, type: 3}
+  - {fileID: 2872878330611866157, guid: e1a4dcb032b940f47a819bf2ebe5aa8a, type: 3}
+  - {fileID: 4872801625061267728, guid: fa330cdb72bbfea4497bc59ca97aa4dc, type: 3}
 --- !u!1 &1704695929269383626
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,11 +34,20 @@ public class RoadPartController : MonoBehaviour
         }
     }
 
+    private int lastObstacle = 0;
+
     public void AddRandomObstacle()
     {
         if (Obstacles?.Length > 0)
         {
-            int obstacleIndex = Random.Range(0, Obstacles.Length - 1);
+            int obstacleIndex = lastObstacle + Random.Range(0, Obstacles.Length - 1);
+
+            if (obstacleIndex == lastObstacle)
+                obstacleIndex++;
+
+            obstacleIndex %= Obstacles.Length;
+            lastObstacle = obstacleIndex;
+
             spawnedObstacle = Instantiate(Obstacles[obstacleIndex], transform);
         }
     }

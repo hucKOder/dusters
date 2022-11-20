@@ -54,11 +54,16 @@ public class CollisionDeath : MonoBehaviour
                         component.enabled = false;
 
                 var r = GetComponent<Rigidbody>();
-                r.isKinematic = false;
-                r.freezeRotation = false;
+                if (r != null)
+                {
+                    r.isKinematic = false;
+                    r.freezeRotation = false;
+                    r.useGravity = true;
+                }
 
                 var ani = GetComponent<Animator>();
-                ani.enabled = false;
+                if (ani != null)
+                    ani.enabled = false;
 
                 IsDead = true;
                 Debug.Log("Impactg fatal");

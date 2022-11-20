@@ -29,8 +29,7 @@ public class GameManager : MonoBehaviour
         if (audioObjects.Length > 0)
         {
             mainAudioSource = audioObjects[0].GetComponent<AudioSource>();
-            mainAudioSource.volume = 0.7f;
-        }
+         }
     }
 
     // Update is called once per frame

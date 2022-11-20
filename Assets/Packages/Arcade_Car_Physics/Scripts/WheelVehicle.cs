@@ -222,6 +222,7 @@ namespace VehicleBehaviour {
         Rigidbody rb = default;
         internal WheelCollider[] wheels = new WheelCollider[0];
 
+        public AudioSource audioSource;
         // Init rigidbody, center of mass, wheels and more
         void Start() {
 #if MULTIOSCONTROLS
@@ -229,6 +230,12 @@ namespace VehicleBehaviour {
 #endif
             if (boostClip != null) {
                 boostSource.clip = boostClip;
+            }
+            
+            GameObject[] audioObjects = GameObject.FindGameObjectsWithTag("AudioMusic");
+            if (audioObjects.Length > 0)
+            {
+                audioSource = audioObjects[0].GetComponent<AudioSource>();
             }
 
             _startingPos = transform.position;
@@ -290,6 +297,8 @@ namespace VehicleBehaviour {
                 if (speed < 10 && started)
                 {
                     dead = true;
+                    audioSource.volume = 0.7f;
+                    audioSource.GetComponent<AudioLowPassFilter>().enabled = true;
                     PlayerPrefs.SetFloat("score", distanceTravelled);
                     Invoke("EndGame", 3);
                 } 

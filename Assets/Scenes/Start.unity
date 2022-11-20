@@ -228,7 +228,8 @@ GameObject:
   - component: {fileID: 1225137491}
   - component: {fileID: 1225137490}
   - component: {fileID: 1225137492}
-  m_Layer: 0
+  - component: {fileID: 1225137493}
+  m_Layer: 11
   m_Name: Audio Source
   m_TagString: AudioMusic
   m_Icon: {fileID: 0}
@@ -247,7 +248,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d812b8b041902b6498a3db1b223afb95, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -358,6 +359,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c14184b6ce9844f91fb86b06be4711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!169 &1225137493
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225137489}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.045020465
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1252086355
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c517f8951f89ad94eb29f1ad9df6834c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 1225137489}
 --- !u!4 &2128510956
 Transform:
   m_ObjectHideFlags: 0

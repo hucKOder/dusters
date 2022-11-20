@@ -4,6 +4,7 @@
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
 
+using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -22,6 +23,9 @@ namespace VehicleBehaviour {
     #endif
         // If isPlayer is false inputs are ignored
         [SerializeField] bool isPlayer = true;
+
+        public bool started = false;
+        public bool dead = false;
         public bool IsPlayer { get => isPlayer;
             set => isPlayer = value;
         } 
@@ -143,7 +147,7 @@ namespace VehicleBehaviour {
         } 
 
         // When IsPlayer is false you can use this to control the throttle
-        float throttle;
+        public float throttle;
         public float Throttle { get => throttle;
             set => throttle = Mathf.Clamp(value, -1f, 1f);
         } 
@@ -268,25 +272,43 @@ namespace VehicleBehaviour {
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f;
 
             // Get all the inputs!
-            if (isPlayer) {
-                // Accelerate & brake
-                if (throttleInput != "" && throttleInput != null)
+            if (isPlayer && !dead) {
+                if (speed > 10)
                 {
-                    throttle = GetInput(throttleInput) - GetInput(brakeInput);
+                    started = true;
+                    throttle = 1f;
+                    // some dude on internet suggested to reduce steering amount at high speeds to not loose control.
+                    var steerReduction = Mathf.Abs(Mathf.Clamp((speed / SteerReductionMaxSpeed),0.0f, 0.55f));
+                    steering = turnInputCurve.Evaluate(GetInput(turnInput)) * (steerAngle - steerAngle * steerReduction);
+
+                } else
+                {
+                    // Accelerate & brake
+                    if (throttleInput != "" && throttleInput != null)
+                    {
+                        throttle = GetInput(throttleInput) - GetInput(brakeInput);
+                        // Can't reverse
+                        if (throttle < 0)
+                        {
+                            throttle = 0;
+                        }
+                    }
+                    // Boost
+                    boosting = (GetInput(boostInput) > 0.5f);
+                    // Turn
+
+                    // some dude on internet suggested to reduce steering amount at high speeds to not loose control.
+                    var steerReduction = Mathf.Abs(Mathf.Clamp((speed / SteerReductionMaxSpeed),0.0f, 0.55f));
+
+                    steering = turnInputCurve.Evaluate(GetInput(turnInput)) * (steerAngle - steerAngle * steerReduction);
+                    // Dirft
+                    drift = GetInput(driftInput) > 0 && rb.velocity.sqrMagnitude > 100;
+                    // Jump
+                    //jumping = GetInput(jumpInput) != 0;
                 }
-                // Boost
-                boosting = (GetInput(boostInput) > 0.5f);
-                // Turn
-
-                // some dude on internet suggested to reduce steering amount at high speeds to not loose control.
-                var steerReduction = Mathf.Abs(Mathf.Clamp((speed / SteerReductionMaxSpeed),0.0f, 0.55f));
-                Debug.Log("Steer Reduction " + steerReduction.ToString("0.00"));
-
-                steering = turnInputCurve.Evaluate(GetInput(turnInput)) * (steerAngle - steerAngle * steerReduction);
-                // Dirft
-                drift = GetInput(driftInput) > 0 && rb.velocity.sqrMagnitude > 100;
-                // Jump
-                //jumping = GetInput(jumpInput) != 0;
+                
+                
+                
             }
 
             // Direction

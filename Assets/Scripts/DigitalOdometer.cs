@@ -33,4 +33,12 @@ public class DigitalOdometer : MonoBehaviour
         }
         _text.text = _distance.ToString();
     }
+
+    void Update()
+    {
+        if (_carScript.dead)
+        {
+            CancelInvoke("CustomUpdate");
+        }    
+    }
 }

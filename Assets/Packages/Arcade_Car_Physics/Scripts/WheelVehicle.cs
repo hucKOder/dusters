@@ -259,7 +259,9 @@ namespace VehicleBehaviour {
                 if (boost > maxBoost) { boost = maxBoost; }
             }
         }
-        
+
+        private float SteerReductionMaxSpeed = 130;
+
         // Update everything
         void FixedUpdate () {
             // Mesure current speed
@@ -275,7 +277,12 @@ namespace VehicleBehaviour {
                 // Boost
                 boosting = (GetInput(boostInput) > 0.5f);
                 // Turn
-                steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
+
+                // some dude on internet suggested to reduce steering amount at high speeds to not loose control.
+                var steerReduction = Mathf.Abs(Mathf.Clamp((speed / SteerReductionMaxSpeed),0.0f, 0.55f));
+                Debug.Log("Steer Reduction " + steerReduction.ToString("0.00"));
+
+                steering = turnInputCurve.Evaluate(GetInput(turnInput)) * (steerAngle - steerAngle * steerReduction);
                 // Dirft
                 drift = GetInput(driftInput) > 0 && rb.velocity.sqrMagnitude > 100;
                 // Jump

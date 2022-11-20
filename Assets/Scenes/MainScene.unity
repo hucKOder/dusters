@@ -432,8 +432,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Breaks Failure, be careful!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b70b33655fff4084e9b356f2f53b7801, type: 2}
-  m_sharedMaterial: {fileID: 5729317062828207847, guid: b70b33655fff4084e9b356f2f53b7801, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e339f0a8e8bb3e94787599652c8bde20, type: 2}
+  m_sharedMaterial: {fileID: 5729317062828207847, guid: e339f0a8e8bb3e94787599652c8bde20, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2033,11 +2033,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5084219723797876012, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 2.6562574e-10
+      value: -4.2890136e-10
       objectReference: {fileID: 0}
     - target: {fileID: 5084219723797876012, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -2.1250113e-10
+      value: 3.4312064e-10
       objectReference: {fileID: 0}
     - target: {fileID: 5084219723797876013, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_Follow
@@ -2077,11 +2077,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5084219724413888253, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016255647
+      value: 0.000000015547824
       objectReference: {fileID: 0}
     - target: {fileID: 5084219724413888253, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000057021734
+      value: -0.0000000054538827
       objectReference: {fileID: 0}
     - target: {fileID: 5084219724413888253, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

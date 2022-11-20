@@ -67,7 +67,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MaxAge: 5
+    - _MaxAge: 10
     - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
@@ -81,5 +81,5 @@ Material:
     - _ClearColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FogColor: {r: 0.9339623, g: 0.885502, b: 0.885502, a: 1}
+    - _FogColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_BuildTextureStacks: []

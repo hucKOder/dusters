@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 2800000, guid: 58f19488d1ad05340ad4d1a9fd869154, type: 3}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.2139894, g: 0.2139894, b: 0.2139894, a: 1}
+  m_IndirectSpecularColor: {r: 0.03207909, g: 0.032675337, b: 0.03381327, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1044,7 +1044,7 @@ MonoBehaviour:
   leftFogLight: {fileID: 142730355}
   rightFogLight: {fileID: 1477863159}
   battery: {fileID: 1517571599}
-  USAGE: 0
+  USAGE: 2
   speedOfConsuption: 0.5
   luminosity: 7
   thisButton: {fileID: 1053537063}
@@ -1955,11 +1955,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5084219723797876012, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 3.346301e-11
+      value: 3.145777e-10
       objectReference: {fileID: 0}
     - target: {fileID: 5084219723797876012, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -2.6770142e-11
+      value: -2.516627e-10
       objectReference: {fileID: 0}
     - target: {fileID: 5084219723797876013, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_Follow
@@ -1999,11 +1999,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5084219724413888253, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000016233992
+      value: 0.000000015932093
       objectReference: {fileID: 0}
     - target: {fileID: 5084219724413888253, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000005694577
+      value: -0.0000000055886775
       objectReference: {fileID: 0}
     - target: {fileID: 5084219724413888253, guid: e97455b256c6c482c81a7b61b750010b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

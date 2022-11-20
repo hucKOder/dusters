@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public AudioSource notificationAudioSource;
     public TextMeshProUGUI warningText;
 
+    AudioSource mainAudioSource;
     [SerializeField]
     int speedTrigger = 20; 
 
@@ -21,7 +22,12 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject[] audioObjects = GameObject.FindGameObjectsWithTag("AudioMusic");
+        if (audioObjects.Length > 0)
+        {
+            mainAudioSource = audioObjects[0].GetComponent<AudioSource>();
+            mainAudioSource.volume = 0.7f;
+        }
     }
 
     // Update is called once per frame

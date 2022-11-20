@@ -14,11 +14,14 @@ public class GameManager : MonoBehaviour
     public AudioSource notificationAudioSource;
     public TextMeshProUGUI warningText;
 
+    public Image tutorialImage;
+
     AudioSource mainAudioSource;
     [SerializeField]
     int speedTrigger = 20; 
 
     bool brakesLid = false;
+    bool tutorialShown = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (tutorialShown && Input.anyKey)
+        {
+            tutorialImage.enabled = false;
+            tutorialShown = true;
+        }
         if (!brakesLid && vehicle.Speed > speedTrigger)
         {
             brakesImage.sprite = brakesSprite;

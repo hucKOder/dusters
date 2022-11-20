@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 #if MULTIOSCONTROLS
     using MOSC;
@@ -275,6 +276,10 @@ namespace VehicleBehaviour {
 
         private float SteerReductionMaxSpeed = 130;
 
+        private void EndGame()
+        {
+            SceneManager.LoadScene("EndScene");
+        }
         // Update everything
         void FixedUpdate () {
             // Mesure current speed
@@ -285,6 +290,8 @@ namespace VehicleBehaviour {
                 if (speed < 10 && started)
                 {
                     dead = true;
+                    PlayerPrefs.SetFloat("score", distanceTravelled);
+                    Invoke("EndGame", 3);
                 } 
                 else if (speed > 15)
                 {

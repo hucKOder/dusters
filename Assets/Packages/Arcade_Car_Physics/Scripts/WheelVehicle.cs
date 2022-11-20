@@ -26,6 +26,8 @@ namespace VehicleBehaviour {
 
         public bool started = false;
         public bool dead = false;
+        public float distanceTravelled = 0;
+        private Vector3 _startingPos;
         public bool IsPlayer { get => isPlayer;
             set => isPlayer = value;
         } 
@@ -228,6 +230,8 @@ namespace VehicleBehaviour {
                 boostSource.clip = boostClip;
             }
 
+            _startingPos = transform.position;
+
 		    boost = maxBoost;
 
             rb = GetComponent<Rigidbody>();
@@ -251,6 +255,11 @@ namespace VehicleBehaviour {
         // Visual feedbacks and boost regen
         void Update()
         {
+            var distanceVector = transform.position - _startingPos;
+            var distanceThisFrame = distanceVector.magnitude;
+            distanceTravelled += distanceThisFrame;
+            _startingPos = transform.position;
+
             foreach (ParticleSystem gasParticle in gasParticles)
             {
                 gasParticle.Play();

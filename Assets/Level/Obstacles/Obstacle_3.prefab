@@ -89,11 +89,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 119.327
       objectReference: {fileID: 0}
+    - target: {fileID: 6109739102383697686, guid: 8983c8df5fb12ea4bb76cdf0ef2f9c1b, type: 3}
+      propertyPath: DeathParticle
+      value: 
+      objectReference: {fileID: 6121580797157059176}
+    - target: {fileID: 6109739102383697686, guid: 8983c8df5fb12ea4bb76cdf0ef2f9c1b, type: 3}
+      propertyPath: CollisionParticle
+      value: 
+      objectReference: {fileID: 6121580797157059176}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8983c8df5fb12ea4bb76cdf0ef2f9c1b, type: 3}
 --- !u!4 &2920102572313733853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4265163953248404, guid: 8983c8df5fb12ea4bb76cdf0ef2f9c1b, type: 3}
+  m_PrefabInstance: {fileID: 2920987834760393289}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6121580797157059176 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8970422482763208737, guid: 8983c8df5fb12ea4bb76cdf0ef2f9c1b, type: 3}
   m_PrefabInstance: {fileID: 2920987834760393289}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4314182520547151684

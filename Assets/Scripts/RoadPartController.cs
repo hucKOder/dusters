@@ -27,12 +27,6 @@ public class RoadPartController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //if (StartTransform != null)
-        //{
-        //    Gizmos.color = Color.green;
-        //    Gizmos.DrawWireCube(StartTransform.position, new Vector3(1, 1, 1));
-        //}
-
         if (EndTransform != null)
         {
             Gizmos.color = Color.green;
@@ -44,17 +38,14 @@ public class RoadPartController : MonoBehaviour
     {
         if (Obstacles?.Length > 0)
         {
-            Debug.Log("sPAWN SHIT");
-            int obstacleIndex = Random.RandomRange(0, Obstacles.Length - 1);
+            int obstacleIndex = Random.Range(0, Obstacles.Length - 1);
             spawnedObstacle = Instantiate(Obstacles[obstacleIndex], transform);
         }
     }
 
     public void CleanupObstacles()
     {
-        if (Obstacles?.Length > 0)
-        {
+        if (spawnedObstacle != null)
             Destroy(spawnedObstacle);
-        }
     }
 }

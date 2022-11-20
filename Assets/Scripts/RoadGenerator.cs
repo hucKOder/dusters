@@ -1,10 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
 
 public class RoadGenerator : MonoBehaviour
 {
@@ -58,7 +54,6 @@ public class RoadGenerator : MonoBehaviour
         for (int i = 0; i <= GenerateParts; i++)
         {
             var spawnedRoad = Instantiate(RoadPrefabs[part], spawnPosition, spawnOrientation) as RoadPartController;
-            AddSlopeVariation(spawnedRoad);
             spawnPosition = spawnedRoad.EndTransform.position;
             spawnOrientation = spawnedRoad.EndTransform.rotation;
             spawnedRoad.transform.SetParent(transform);
@@ -100,39 +95,10 @@ public class RoadGenerator : MonoBehaviour
             tileTmp.transform.rotation = SpawnedRoadPrefabs[^1].EndTransform.rotation;
             tileTmp.AddRandomObstacle();
 
-            AddSlopeVariation(tileTmp);
             //tileTmp.ActivateRandomObstacle();
             SpawnedRoadPrefabs.Add(tileTmp);
         }
     }
 
-    private void AddSlopeVariation(RoadPartController roadPart)
-    {
-        // this stupid, dont do
-        return;
-        // #very efficient code
-
-        var slopeDir = 1;
-
-        if (roadPart.transform.rotation.x > MaxSlope)
-            slopeDir = -1;
-
-        if (roadPart.transform.rotation.x < -MaxSlope)
-            slopeDir = 1;
-
-        var slopeChange = slopeDir * Random.Range(0, MaxSlopeChange);
-
-        roadPart.transform.Rotate(Vector3.right, slopeChange);
-    }
-
-    //private void OnDrawGizmos()
-    //{
-    //    if (CarObject != null)
-    //    {
-    //        Gizmos.color = Color.yellow;
-    //        Gizmos.DrawWireSphere(CarObject.transform.position, GenerationDistance);
-    //    }
-    //}
-
-
+    
 }

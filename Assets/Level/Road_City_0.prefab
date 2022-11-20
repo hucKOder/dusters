@@ -3320,11 +3320,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2959574953602826467, guid: 3f3f0ad0013c05f478f38f3920e05817, type: 3}
+      propertyPath: lengthInSec
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959574953602826467, guid: 3f3f0ad0013c05f478f38f3920e05817, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959574953602826467, guid: 3f3f0ad0013c05f478f38f3920e05817, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959574953602826467, guid: 3f3f0ad0013c05f478f38f3920e05817, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959574953602826467, guid: 3f3f0ad0013c05f478f38f3920e05817, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433464365314424215, guid: 3f3f0ad0013c05f478f38f3920e05817, type: 3}
+      propertyPath: DeathParticle
+      value: 
+      objectReference: {fileID: 8064759805325073625}
+    - target: {fileID: 6433464365314424215, guid: 3f3f0ad0013c05f478f38f3920e05817, type: 3}
+      propertyPath: CollisionParticle
+      value: 
+      objectReference: {fileID: 8064759805325073625}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f3f0ad0013c05f478f38f3920e05817, type: 3}
 --- !u!4 &5109641631238540570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4602628002107680, guid: 3f3f0ad0013c05f478f38f3920e05817, type: 3}
+  m_PrefabInstance: {fileID: 5114204532168727610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8064759805325073625 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2959574953602826467, guid: 3f3f0ad0013c05f478f38f3920e05817, type: 3}
   m_PrefabInstance: {fileID: 5114204532168727610}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5202588863449069258

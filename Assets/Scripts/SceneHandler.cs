@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    public void StartGame()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
     void Update()
     {
-        if (Input.anyKey)
-        {
-            SceneManager.LoadScene("MainScene");
-        }
     }
 }

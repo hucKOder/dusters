@@ -280,21 +280,20 @@ namespace VehicleBehaviour {
             // Mesure current speed
             speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f;
 
-            if (started && speed < 10)
-            {
-                dead = true;
-            } 
-
             // Get all the inputs!
             if (isPlayer && !dead) {
-                if (speed > 10)
+                if (speed < 10 && started)
+                {
+                    dead = true;
+                } 
+                else if (speed > 15)
                 {
                     started = true;
                     throttle = 1f;
                     // some dude on internet suggested to reduce steering amount at high speeds to not loose control.
                     var steerReduction = Mathf.Abs(Mathf.Clamp((speed / SteerReductionMaxSpeed),0.0f, 0.55f));
                     steering = turnInputCurve.Evaluate(GetInput(turnInput)) * (steerAngle - steerAngle * steerReduction);
-
+                    
                 } else
                 {
                     // Accelerate & brake
